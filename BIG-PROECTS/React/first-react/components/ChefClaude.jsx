@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Recipe from "./Recipe"
 import IngredientsList from "./IngredientsList"
-import {getRecipeFromMistral} from '../src/ai.js'
+import {getRecipeFromGemini} from '../src/ai.js'
 
 export default function ChefClaude() {
 
@@ -20,7 +20,7 @@ export default function ChefClaude() {
     }
 
     async function handleRecipeClick() {
-        const recipe = await getRecipeFromMistral(ingredients)
+        const recipe = await getRecipeFromGemini(ingredients)
         setRecipeList(recipe)
     }
     function closeRecipe() {
